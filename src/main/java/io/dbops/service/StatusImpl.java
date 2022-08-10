@@ -131,9 +131,9 @@ public class StatusImpl extends DBOpsService implements StatusService {
             // find the user that's logged in
             User user = getUser(userId);
 
-            logger.info(user.getUserId());
             Status status = getStatus(statusId);
             user.likeStatus(status);
+
             // save the user
             userRepository.save(user);
         }else{

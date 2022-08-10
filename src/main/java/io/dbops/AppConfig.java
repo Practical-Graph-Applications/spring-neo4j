@@ -65,7 +65,8 @@ public class AppConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public Neo4jTransactionManager neo4jTransactionManager() {
+    public Neo4jTransactionManager transactionManager() {
+
         return new Neo4jTransactionManager(sessionFactory());
     }
 
