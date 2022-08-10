@@ -57,8 +57,11 @@ public class SecureViewController extends DBOpsViewController {
     @RequestMapping(value = { "/friendFinder" }, method = RequestMethod.GET)
     public ModelAndView friendFinder(final HttpServletRequest req) {
         modelAndView = new ModelAndView("friendFinder");
-
+        modelAndView.addObject("whoIsFollowingUser", userService.whoIsFollowingUser(SessionUtils.get(req, DBOpsConstants.userId).toString()));
+        modelAndView.addObject("whoIsUserFollowing", userService.whoIsUserFollowing(SessionUtils.get(req, DBOpsConstants.userId).toString()));
+        modelAndView.addObject("potentialMatches", userService.potentialMatches(SessionUtils.get(req, DBOpsConstants.userId).toString()));
         defaultModelAndViewObjects(req,"Friend Finder");
+
         return modelAndView;
     }
 

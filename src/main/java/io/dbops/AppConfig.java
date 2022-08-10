@@ -89,8 +89,8 @@ public class AppConfig implements WebMvcConfigurer {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Graph Story Data Service")
-                .description("Data Service endpoints for Graph Story.")
+        return new ApiInfoBuilder().title("DBOps Data Service")
+                .description("Data Service endpoints for DBOps.")
                 .build();
     }
 

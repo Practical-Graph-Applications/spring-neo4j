@@ -59,9 +59,9 @@ LOAD CSV WITH HEADERS FROM 'file:///follows.csv' AS row
 MATCH (user:User { userId: row.userId  } ), (userToFollow:User { userId: row.followingid  } )
 MERGE (user)-[:FOLLOWS]->(userToFollow)
 ***************
-MATCH (u:User {userId: "1" })
+MATCH (u:User {username: "ajordan" })
 WITH u
 MATCH (u)-[:FOLLOWS*0..1]->(f)
-RETURN f
+RETURN f LIMIT 100
 ***************
 

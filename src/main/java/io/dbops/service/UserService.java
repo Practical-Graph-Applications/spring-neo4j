@@ -25,6 +25,8 @@ public interface UserService {
     // unfollow a user
     void unfollow(String userId, String userIdToUnFollow);
 
+    Set<User> potentialMatches(String userId);
+
     // collection of who follows user
     Set<User> whoIsFollowingUser(String userId);
 

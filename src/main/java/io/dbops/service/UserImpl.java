@@ -122,6 +122,12 @@ public class UserImpl extends DBOpsService implements UserService  {
         return userRepository.following(userId);
     }
 
+    public Set<User> potentialMatches(String userId){
+        Set<User> pm = userRepository.potentialMatches(userId);
+        logger.info(String.valueOf(pm.size()));
+        return pm;
+    }
+
     // follow a user
     @Transactional
     public void follow(String userId, String userIdToFollow){

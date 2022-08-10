@@ -102,6 +102,7 @@ public class UserController {
     @RequestMapping( path = "/follow/{userId}/{userIdToFollow}", method = GET, produces = "application/json")
     public ResponseString follow(@PathVariable String userId, @PathVariable String userIdToFollow) {
         userService.follow(userId,userIdToFollow);
+        logger.info(userId + " to folow " +userIdToFollow);
         ResponseString rs= new ResponseString();
         rs.setResponse("success");
         return rs;

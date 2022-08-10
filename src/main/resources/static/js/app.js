@@ -60,6 +60,38 @@ if(document.getElementById("timeline")){
     });
 }
 
+if(document.getElementById("friendfinder")){
+    var timeline = new Vue({
+        el: '#friendfinder',
+        delimiters: ['${', '}'],
+        data: {
+        },
+        mounted: function () {
+        },
+        methods: {
+            addafriend: function (id, e) {
+
+                e.preventDefault();
+
+                var af=id;
+                var userId=$("#currentUserId").val();
+
+
+                $.get("/api/user/follow/"+userId+"/"+af, function (response) {
+                    window.location.href = "http://localhost:8090/app/friendFinder";
+                }).fail(function(response) {
+                    var r = jQuery.parseJSON(response.responseText);
+                    alert(r.message);
+                });
+
+
+
+
+            }
+        }
+    });
+}
+
 
 if(document.getElementById("productspage")){
     var productspage = new Vue({

@@ -1,7 +1,30 @@
-<div class="row" id="friendFinder">
+<div class="row" id="friendfinder">
     <div class="col-lg-7">
-       build this!
+        {{#potentialMatches}}
+        <div class="social-feed-box">
+            <div class="social-avatar">
+                <a href="" class="float-left">
+                    <img alt="image" src="/img/profile_small.jpg">
+                </a>
+                <div class="media-body">
+                    <a href="#">
+                        {{username}}
+                    </a>
+                    <p><button class="btn btn-primary btn-xs" v-on:click="addafriend({{userId}}, $event)" id="{{userId}}"><i class=''></i> Add Friend</button></p>
+                </div>
+            </div>
+        </div>
+        {{/potentialMatches}}
     </div>
     <div  class="col-lg-5">
+        <h2>Following</h2>
+        {{#whoIsUserFollowing}}
+        {{username}}<br/>
+        {{/whoIsUserFollowing}}
+
+        <h2>Followers</h2>
+        {{#whoIsFollowingUser}}
+        {{username}}<br/>
+        {{/whoIsFollowingUser}}
     </div>
 </div>
