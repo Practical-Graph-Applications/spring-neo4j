@@ -54,7 +54,7 @@ LOAD CSV WITH HEADERS FROM 'file:///nextstatus2.csv' AS row
 MATCH (s:Status { statusId:row.nextToLastStatusId} ), (ns:Status { statusId:row.statusId} )
 MERGE (s)-[:NEXT_STATUS]->(ns)
 ***************
-USING PERIODIC COMMIT 10000
+:auto USING PERIODIC COMMIT 10000
 LOAD CSV WITH HEADERS FROM 'file:///follows.csv' AS row
 MATCH (user:User { userId: row.userId  } ), (userToFollow:User { userId: row.followingid  } )
 MERGE (user)-[:FOLLOWS]->(userToFollow)
