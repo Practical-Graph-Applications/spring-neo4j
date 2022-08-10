@@ -54,4 +54,4 @@ bin/neo4j-admin import --nodes import/csvs/nodes/Category.csv --nodes import/csv
 13. Restart the DBOps database
 14. Go to http://localhost:7474/browser/ and login
 15. Make sure "Enable multi statement query editor"
-16. Run the cypher statements in the cypher folder
+16. Run the cypher statements in the cypher folder, which you can preview here: https://github.com/dbops-io/spring-neo4j/blob/master/cypher/to-run.cql
